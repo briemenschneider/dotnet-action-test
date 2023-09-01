@@ -39,12 +39,12 @@ jobs:
           dotnet-version: '7.x'
           with-cache: 'false'
       - name: Build website
-        run: dotnet build
+        run: dotnet build --configuration Release --output bin/Release/net7.0
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
           name: build-files
-          path: bin/release/net7.0
+          path: bin/Release/net7.0
   deploy:
     needs: build
     runs-on: ubuntu-latest
