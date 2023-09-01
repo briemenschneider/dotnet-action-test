@@ -11,6 +11,7 @@ jobs:
         uses: briemenschneider/dotnetcacheandbuild@v1
         with:
           dotnet-version: '7.x'
+          with-cache: 'false'
   test:
     runs-on: ubuntu-latest
     steps:
@@ -18,6 +19,7 @@ jobs:
         uses: briemenschneider/dotnetcacheandbuild@v1
         with:
           dotnet-version: '7.x'
+          with-cache: 'false'
       - name: Test code
         id: run-tests
         run: dotnet test --logger trx --results-directory ./test-results
@@ -35,6 +37,7 @@ jobs:
         uses: briemenschneider/dotnetcacheandbuild@v1
         with:
           dotnet-version: '7.x'
+          with-cache: 'false'
       - name: Build website
         run: dotnet build
       - name: Upload artifacts
